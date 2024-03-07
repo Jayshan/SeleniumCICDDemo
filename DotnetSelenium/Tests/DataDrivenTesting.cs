@@ -74,8 +74,8 @@ public class DataDrivenTesting
 
     //Test case utilizing the POM, DDT using JSON file as data source, utlizing the Arrange, Act, Assert pattern, and Fluent Assertions
     [Test]
-    [Category("ddt")]
-    [TestCaseSource(nameof(LoginJsonData))]
+    [Category("GHDemo")]
+    [TestCaseSource(nameof(Login))]
     public void LoginFluentAssertions(LoginModel loginModel)
     {
         //Arrange
