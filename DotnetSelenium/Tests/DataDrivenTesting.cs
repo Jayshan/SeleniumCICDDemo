@@ -29,10 +29,13 @@ public class DataDrivenTesting
 
     private IWebDriver GetWebDriver(DriverType driverType)
     {
+        ChromeOptions chromeOptions = new ChromeOptions();
+        chromeOptions.AddArgument("--headless=new");
+
         switch (driverType) 
         {
             case DriverType.Chrome:
-                return new ChromeDriver();
+                return new ChromeDriver(chromeOptions);
             case DriverType.Firefox:
                 return new FirefoxDriver();
             case DriverType.Edge:
@@ -40,7 +43,7 @@ public class DataDrivenTesting
             case DriverType.Safari:
                 return new SafariDriver();
             default:
-                return new ChromeDriver();
+                return new ChromeDriver(chromeOptions);
         }
     }
 
